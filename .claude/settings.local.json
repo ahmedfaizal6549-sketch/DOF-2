@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:api.anthropic.com)"
+      "WebFetch(domain:api.anthropic.com)",
+      "mcp__4c8844ce-7ff0-43da-82db-69dff83802e8__get_deployment_build_logs"
     ]
   }
 }
