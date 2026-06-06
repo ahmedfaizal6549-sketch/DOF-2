@@ -85,7 +85,7 @@ const EPISODES: Episode[] = [
   // ARC 2: Rogue Gallery Rises (19)
   { num: 10, title: 'Two-Face Part 1',                           arc: 1, villain: 'Two-Face',                stars: 3, note: "Harvey Dent's tragic fall begins — stunning, cinematic storytelling" },
   { num: 11, title: 'Two-Face Part 2',                           arc: 1, villain: 'Two-Face',                stars: 3 },
-  { num: 12, title: 'Heart of Ice',                              arc: 1, villain: 'Mr. Freeze',              stars: 3, note: '★ Emmy Award winner — the greatest villain episode in cartoon history. "Mercy? I'm beyond that now."' },
+  { num: 12, title: 'Heart of Ice',                              arc: 1, villain: 'Mr. Freeze',              stars: 3, note: "★ Emmy Award winner — the greatest villain episode in cartoon history. \"Mercy? I'm beyond that now.\"" },
   { num: 13, title: 'Feat of Clay Part 1',                       arc: 1, villain: 'Clayface',                stars: 2, note: 'Matt Hagen\'s heartbreaking origin as Clayface' },
   { num: 14, title: 'Feat of Clay Part 2',                       arc: 1, villain: 'Clayface',                stars: 2 },
   { num: 15, title: "Joker's Favor",                             arc: 1, villain: 'Joker · Harley Quinn',    stars: 3, note: '⚡ Harley Quinn\'s world debut — one of the most important cartoon episodes ever aired' },
@@ -191,7 +191,7 @@ export default function BatmanPage() {
       const next = new Set(prev)
       if (next.has(num)) next.delete(num)
       else next.add(num)
-      try { localStorage.setItem('batman-watched', JSON.stringify([...next])) } catch {}
+      try { localStorage.setItem('batman-watched', JSON.stringify(Array.from(next))) } catch {}
       return next
     })
   }
@@ -210,7 +210,7 @@ export default function BatmanPage() {
     setWatched(prev => {
       const next = new Set(prev)
       arcNums.forEach(n => mark ? next.add(n) : next.delete(n))
-      try { localStorage.setItem('batman-watched', JSON.stringify([...next])) } catch {}
+      try { localStorage.setItem('batman-watched', JSON.stringify(Array.from(next))) } catch {}
       return next
     })
   }
